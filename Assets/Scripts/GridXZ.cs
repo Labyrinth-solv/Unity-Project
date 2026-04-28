@@ -48,8 +48,8 @@ public class GridXZ<TGridObject>
                 TextMesh textMesh=obj.GetComponent<TextMesh>();
                 //Hien thi tren man hinh
                 textMesh.text=gridArray[i,j].ToString();
-                textMesh.fontSize=50;
-                textMesh.characterSize=0.1f;
+                textMesh.fontSize=20;
+                textMesh.characterSize=0.1f;    
                 textMesh.color=Color.white;
                 textMesh.alignment=TextAlignment.Center;
                 textMesh.anchor=TextAnchor.MiddleCenter;
@@ -72,6 +72,11 @@ public class GridXZ<TGridObject>
     public float GetCellSize()
     {
         return this.cellSize;
+    }
+
+    public Vector2Int GetSize()
+    {
+        return new Vector2Int(width,height);
     }
 
     public void GetXZ(Vector3 mousePosition, out int x, out int z)
