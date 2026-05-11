@@ -9,8 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4330079240739138211}
+  - component: {fileID: 8801462911978373750}
+  - component: {fileID: -6656482522167634815}
+  - component: {fileID: 1111111111111111111}
+  - component: {fileID: 2222222222222222222}
   m_Layer: 0
-  m_Name: viMachine0
+  m_Name: pfGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,6 +38,73 @@ Transform:
   - {fileID: 3533826922269085907}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8801462911978373750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2286967282035330505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74335365cfb834f408b5edac14cf5fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-6656482522167634815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2286967282035330505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc05d631eacd8184498e8004193bee86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openMenuButton: {fileID: 1584590649002935776, guid: 3c6951c0822fff849b4416f6297f6eac, type: 3}
+  menuPanel: {fileID: 8036079567298013006, guid: 86a0b43037363ea47becb24d65510e76, type: 3}
+  itemButtonContainer: {fileID: 2786991056780502329, guid: 092b84f46fb65434682a8544701754fb, type: 3}
+  itemButtonPrefab: {fileID: 5844440968198363330, guid: 276ba018b881ad744bafb089ada4c55b, type: 3}
+  availableItems:
+  - {fileID: 11400000, guid: ada91c7047f21b64ea35e2f828a7dda7, type: 2}
+  - {fileID: 11400000, guid: 85a27c6d45af1cd4992fbfd06052b3af, type: 2}
+  canvasSize: {x: 420, y: 260}
+  menuSize: {x: 260, y: 240}
+  menuScreenPosition: {x: 40, y: -40}
+  closeButtonPosition: {x: 130, y: -200}
+  buttonSize: {x: 120, y: 30}
+  selectedButtonColor: {r: 1, g: 0.93, b: 0.55, a: 1}
+  normalButtonColor: {r: 1, g: 1, b: 1, a: 1}
+  selectedTextColor: {r: 0, g: 0, b: 0, a: 1}
+  normalTextColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+--- !u!114 &1111111111111111111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2286967282035330505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba3003cd4f779b48ae50284093a597b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  produceInterval: 1.5
+  outputItem: {fileID: 0}
+--- !u!114 &2222222222222222222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2286967282035330505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4449a9bcfa4fb4449a38888c5e76ab64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
 --- !u!1 &3242801468911355719
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,7 +167,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0b5a5fe4caad335489ac90fe853ae11b, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -198,7 +269,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 585635a86add14f47904a8f66aa21c60, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0b5a5fe4caad335489ac90fe853ae11b, type: 2}
+      objectReference: {fileID: 2100000, guid: 05fdeedd4c55fe14e84361f4af3dbbd3, type: 2}
     - target: {fileID: 919132149155446097, guid: 585635a86add14f47904a8f66aa21c60, type: 3}
       propertyPath: m_Name
       value: 'cover-stripe-window '
@@ -274,13 +345,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 8207d473d941df54b8e61ff9fe678092, type: 3}
-      propertyPath: m_CastShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 8207d473d941df54b8e61ff9fe678092, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0b5a5fe4caad335489ac90fe853ae11b, type: 2}
+      objectReference: {fileID: 2100000, guid: 05fdeedd4c55fe14e84361f4af3dbbd3, type: 2}
     - target: {fileID: 919132149155446097, guid: 8207d473d941df54b8e61ff9fe678092, type: 3}
       propertyPath: m_Name
       value: structure-doorway

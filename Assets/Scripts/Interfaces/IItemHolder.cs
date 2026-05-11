@@ -1,6 +1,6 @@
 public interface IItemHolder
 {
     bool CanAcceptItem();
-    bool TryAddItem(Item item);
-    Item TakeItem();
+    bool TryAddItem(ItemSO item);
+    ItemSO TakeItem();
 }

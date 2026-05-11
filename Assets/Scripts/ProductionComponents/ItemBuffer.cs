@@ -1,20 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemBuffer : MonoBehaviour, IItemHolder, IItemEndpoint
 {
-    private Item item;
+    [SerializeField] private ItemSO item;
 
     // IItemHolder (internal logic)
     public bool CanAcceptItem() => item == null;
-    public bool TryAddItem(Item newItem)
+    public bool TryAddItem(ItemSO newItem)
     {
         if (item != null) return false;
         item = newItem;
         return true;
     }
-    public Item TakeItem()
+    public ItemSO TakeItem()
     {
         var temp = item;
         item = null;
@@ -23,9 +21,9 @@ public class ItemBuffer : MonoBehaviour, IItemHolder, IItemEndpoint
 
     // IItemEndpoint (external communication)
     public bool CanReceive() => CanAcceptItem();
-    public bool TryReceive(Item item) => TryAddItem(item);
+    public bool TryReceive(ItemSO item) => TryAddItem(item);
 
     public bool CanProvide() => this.item != null;
-    public Item Peek() => item;
+    public ItemSO Peek() => item;
     public void Consume() => item = null;
 }

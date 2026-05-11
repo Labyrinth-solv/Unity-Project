@@ -9,9 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4330079240739138211}
-  - component: {fileID: 8801462911978373750}
   m_Layer: 0
-  m_Name: pfMachine0
+  m_Name: viGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,18 +34,6 @@ Transform:
   - {fileID: 3533826922269085907}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8801462911978373750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2286967282035330505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74335365cfb834f408b5edac14cf5fbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3242801468911355719
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +96,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0b5a5fe4caad335489ac90fe853ae11b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -211,7 +198,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 585635a86add14f47904a8f66aa21c60, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 05fdeedd4c55fe14e84361f4af3dbbd3, type: 2}
+      objectReference: {fileID: 2100000, guid: 0b5a5fe4caad335489ac90fe853ae11b, type: 2}
     - target: {fileID: 919132149155446097, guid: 585635a86add14f47904a8f66aa21c60, type: 3}
       propertyPath: m_Name
       value: 'cover-stripe-window '
@@ -287,9 +274,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 8207d473d941df54b8e61ff9fe678092, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 8207d473d941df54b8e61ff9fe678092, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 05fdeedd4c55fe14e84361f4af3dbbd3, type: 2}
+      objectReference: {fileID: 2100000, guid: 0b5a5fe4caad335489ac90fe853ae11b, type: 2}
     - target: {fileID: 919132149155446097, guid: 8207d473d941df54b8e61ff9fe678092, type: 3}
       propertyPath: m_Name
       value: structure-doorway

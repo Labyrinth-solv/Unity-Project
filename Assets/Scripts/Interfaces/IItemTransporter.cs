@@ -4,7 +4,7 @@ using UnityEngine;
 public interface IItemTransporter
 {
     bool HasItem();
-    Item PeekItem();
+    ItemSO PeekItem();
     void RemoveItem();
 
     float GetProgress();          // 0 → 1 (item đã đi được bao xa)

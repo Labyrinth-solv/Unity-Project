@@ -9,7 +9,7 @@ public class GridBuildingSystem : MonoBehaviour
 {
     [SerializeField] private List<PlacedObjectTypeSO> placedObjectTypeSOList;
     private PlacedObjectTypeSO placedObjectTypeSO;
-    private PlacedObjectTypeSO.Dir dir = PlacedObjectTypeSO.Dir.Down;
+    private PlacedObjectTypeSO.Dir dir = PlacedObjectTypeSO.Dir.Right;
     private GridXZ<GridObject> grid;
     public static GridBuildingSystem Instance { get; private set; }
     public event EventHandler OnSelectedChanged;
@@ -44,6 +44,16 @@ public class GridBuildingSystem : MonoBehaviour
     public PlacedObjectTypeSO GetPlacedObjectTypeSO()
     {
         return this.placedObjectTypeSO;
+    }
+
+    public bool TryGetPlacedObjectAtGridPosition(Vector2Int gridPosition, out PlacedObject placedObject)
+    {
+        placedObject = null;
+        GridObject gridObject = grid.GetGridObject(gridPosition.x, gridPosition.y);
+        if (gridObject == null) return false;
+
+        placedObject = gridObject.GetPlacedObject();
+        return placedObject != null;
     }
 
     public void SetSelectedObject(int index)

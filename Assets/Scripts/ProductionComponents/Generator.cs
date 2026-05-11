@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-
-public class Generator : MonoBehaviour, ITickable, IProducer
+public class Generator : MonoBehaviour, ITickable, IProducer, IProductionMachine
 {
     [SerializeField] private float produceInterval=1.5f;
-    [SerializeField] private Item outputItem;
+    [SerializeField] private ItemSO outputItem;
     
     private float timer;
     private IItemHolder output;
@@ -14,6 +11,17 @@ public class Generator : MonoBehaviour, ITickable, IProducer
     {
         output=GetComponent<IItemHolder>();
     }
+
+    private void OnEnable()
+    {
+        TickManager.Register(this);
+    }
+
+    private void OnDisable()
+    {
+        TickManager.Unregister(this);
+    }
+
     public void Tick(float deltaTime)
     {
         timer+=deltaTime;
@@ -29,16 +37,24 @@ public class Generator : MonoBehaviour, ITickable, IProducer
 
     public bool CanProduce()
     {
-        return output != null && output.CanAcceptItem();
+        return outputItem != null && output != null && output.CanAcceptItem();
     }
 
     public void Produce()
     {
-        Item newItem=new Item()
+        if (output != null && output.TryAddItem(outputItem))
         {
-            id=outputItem.id,
-            amount=1
-        };
-        output.TryAddItem(newItem);
+            ProductionRateTracker.RecordProduced(outputItem);
+        }
+    }
+
+    public void SetOutputItem(ItemSO newItem)
+    {
+        outputItem = newItem;
+    }
+
+    public ItemSO GetOutputItem()
+    {
+        return outputItem;
     }
 }

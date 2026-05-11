@@ -67,7 +67,7 @@ public class BuildingGhost : MonoBehaviour
             visual.localPosition = Vector3.zero;
             visual.localEulerAngles = Vector3.zero;
             SetLayerRecursive(visual.gameObject, 11);
-            CreateOutline();
+            // CreateOutline();
         }
     }
 

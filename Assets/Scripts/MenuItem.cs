@@ -19,6 +19,7 @@ public class MenuItem : MonoBehaviour
         int index=0;
         if(actionName=="button1") index=0;
         if(actionName=="button2") index=1;
+        if(actionName=="button3") index=2;
         GridBuildingSystem.Instance.SetSelectedObject(index);
     }
     
