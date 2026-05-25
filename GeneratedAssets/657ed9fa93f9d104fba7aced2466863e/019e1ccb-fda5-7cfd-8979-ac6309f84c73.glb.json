@@ -1,0 +1,23 @@
+{
+    "asset": "657ed9fa93f9d104fba7aced2466863e",
+    "fileName": "019e1ccb-fda5-7cfd-8979-ac6309f84c73.glb",
+    "prompt": "An industrial straight conveyor belt segment, metallic frame, dark gray belt surface, matching the provided reference image style.",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "e18eb5502f8b1af40bf45573e1b8af92",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

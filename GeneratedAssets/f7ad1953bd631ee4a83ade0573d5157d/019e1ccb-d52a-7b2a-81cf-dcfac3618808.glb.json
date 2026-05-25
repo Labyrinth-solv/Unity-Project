@@ -1,0 +1,23 @@
+{
+    "asset": "f7ad1953bd631ee4a83ade0573d5157d",
+    "fileName": "019e1ccb-d52a-7b2a-81cf-dcfac3618808.glb",
+    "prompt": "An industrial 90-degree curved conveyor belt segment, metallic frame, dark gray belt surface, matching the provided reference image style.",
+    "negativePrompt": "",
+    "model": "model3d-tripo-p1",
+    "modelName": "Tripo P1",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "promptImageReferenceGuid": "82a32f76460f92a4cacc2d1e73686099",
+    "modelReferenceGuid": "",
+    "multiviewFrontGuid": "",
+    "multiviewBackGuid": "",
+    "multiviewLeftGuid": "",
+    "multiviewRightGuid": "",
+    "multiviewTopGuid": "",
+    "multiviewBottomGuid": "",
+    "multiviewLeftFrontGuid": "",
+    "multiviewRightFrontGuid": "",
+    "faceLimit": -1
+}

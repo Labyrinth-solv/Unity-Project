@@ -2,14 +2,17 @@ using UnityEngine;
 
 public class Generator : MonoBehaviour, ITickable, IProducer, IProductionMachine
 {
-    [SerializeField] private float produceInterval=1.5f;
+    [SerializeField] private string machineName = "Generator";
+    public string GetMachineName() => machineName;
+    [SerializeField] private float produceInterval = 1.5f;
     [SerializeField] private ItemSO outputItem;
-    
+
     private float timer;
     private IItemHolder output;
+
     private void Awake()
     {
-        output=GetComponent<IItemHolder>();
+        output = GetComponent<IItemHolder>();
     }
 
     private void OnEnable()
@@ -24,13 +27,20 @@ public class Generator : MonoBehaviour, ITickable, IProducer, IProductionMachine
 
     public void Tick(float deltaTime)
     {
-        timer+=deltaTime;
+        if (outputItem == null) return;
+
+        timer += deltaTime;
         if (timer >= produceInterval)
         {
-            timer=0f;
             if (CanProduce())
             {
                 Produce();
+                timer = 0f;
+            }
+            else
+            {
+                // Hold at max progress until buffer clears
+                timer = produceInterval;
             }
         }
     }
@@ -56,5 +66,25 @@ public class Generator : MonoBehaviour, ITickable, IProducer, IProductionMachine
     public ItemSO GetOutputItem()
     {
         return outputItem;
+    }
+
+    public float GetProductionProgressNormalized()
+    {
+        if (outputItem == null || produceInterval <= 0f)
+        {
+            return 0f;
+        }
+
+        return Mathf.Clamp01(timer / produceInterval);
+    }
+
+    public float GetProductionElapsedTime()
+    {
+        return outputItem == null ? 0f : timer;
+    }
+
+    public float GetProductionDuration()
+    {
+        return Mathf.Max(0f, produceInterval);
     }
 }

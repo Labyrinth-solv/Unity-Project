@@ -16,37 +16,47 @@ public class ProductionMachineUI : MonoBehaviour
     }
 
     [Header("UI Prefabs Or Scene References")]
-    [SerializeField] private Button openMenuButton;
-    [SerializeField] private Canvas menuPanel;
-    [SerializeField] private Transform itemButtonContainer;
+    [SerializeField] private Canvas canvasPrefab;
+    [SerializeField] private GameObject menuPrefab;
     [SerializeField] private GameObject itemButtonPrefab;
+
+    [Header("UI References (Assigned from Prefab or Manual)")]
+    [SerializeField] private RectTransform menuRoot;
+    [SerializeField] private Image productionProgressFill;
+    [SerializeField] private TMP_Text productionProgressTMP;
+    [SerializeField] private TMP_Text inputStatusTMP;
+    [SerializeField] private TMP_Text countersTMP;
+    [SerializeField] private Button closeButton;
+    [SerializeField] private Transform itemButtonContainer;
 
     [Header("Items")]
     [SerializeField] private List<ItemSO> availableItems = new List<ItemSO>();
 
-    [Header("Screen UI Layout")]
-    [SerializeField] private Vector2 canvasSize = new Vector2(420f, 260f);
-    [SerializeField] private Vector2 menuSize = new Vector2(260f, 240f);
+    [Header("Screen UI Layout (Legacy/Fallback)")]
+    [SerializeField] private Vector2 canvasSize = new Vector2(460f, 320f);
+    [SerializeField] private Vector2 menuSize = new Vector2(440f, 400f);
     [SerializeField] private Vector2 menuScreenPosition = new Vector2(40f, -40f);
-    [SerializeField] private Vector2 closeButtonPosition = new Vector2(130f, -10f);
-    [SerializeField] private Vector2 buttonSize = new Vector2(120f, 30f);
     [SerializeField] private Color selectedButtonColor = new Color(1f, 0.93f, 0.55f, 1f);
     [SerializeField] private Color normalButtonColor = Color.white;
     [SerializeField] private Color selectedTextColor = Color.black;
-    [SerializeField] private Color normalTextColor = new Color(0.19607843f, 0.19607843f, 0.19607843f, 1f);
+    [SerializeField] private Color normalTextColor = Color.black;
 
     private static ProductionMachineUI openInstance;
 
     private IProductionMachine machine;
     private Canvas runtimeCanvas;
-    private RectTransform runtimeCanvasRect;
     private RectTransform runtimeMenuRoot;
-    private Transform runtimeItemContainer;
     private readonly List<GameObject> spawnedButtons = new List<GameObject>();
     private readonly List<ItemButtonView> itemButtonViews = new List<ItemButtonView>();
 
-    private void Awake()
+    private void Start()
     {
+        if (IsGhostPreviewInstance())
+        {
+            enabled = false;
+            return;
+        }
+
         machine = FindProductionMachine();
         if (machine == null)
         {
@@ -55,22 +65,19 @@ public class ProductionMachineUI : MonoBehaviour
             return;
         }
 
-        BuildUIFromPrefabs();
+        InitializeUI();
         CreateItemButtons();
         CloseMenu();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             HandleOpenShortcut();
         }
 
-        if (openInstance == this && Input.GetKeyDown(KeyCode.Escape))
-        {
-            CloseMenu();
-        }
+        RefreshProductionProgressVisual();
     }
 
     private void OnDestroy()
@@ -118,35 +125,90 @@ public class ProductionMachineUI : MonoBehaviour
         return null;
     }
 
-    private void BuildUIFromPrefabs()
+    private void InitializeUI()
     {
-        runtimeCanvas = ResolveCanvas();
-        if (runtimeCanvas == null)
+        // 1. Setup Canvas
+        if (canvasPrefab != null)
         {
-            Debug.LogError("ProductionMachineUI could not resolve the Canvas prefab/reference.");
-            enabled = false;
-            return;
+            runtimeCanvas = Instantiate(canvasPrefab);
+        }
+        else
+        {
+            GameObject canvasObj = new GameObject("ProductionMachineCanvas", typeof(RectTransform), typeof(Canvas), typeof(GraphicRaycaster));
+            runtimeCanvas = canvasObj.GetComponent<Canvas>();
+            runtimeCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            runtimeCanvas.sortingOrder = 100;
+            
+            RectTransform canvasRT = canvasObj.GetComponent<RectTransform>();
+            canvasRT.sizeDelta = canvasSize;
         }
 
-        runtimeCanvasRect = runtimeCanvas.GetComponent<RectTransform>();
-        ConfigureCanvas();
-
-        runtimeMenuRoot = ResolveMenuRoot();
-        if (runtimeMenuRoot == null)
+        // 2. Setup Menu Panel
+        if (menuPrefab != null)
         {
-            Debug.LogError("ProductionMachineUI could not find GeneratorMenuPanel inside the Canvas prefab.");
-            enabled = false;
-            return;
+            GameObject menuObj = Instantiate(menuPrefab, runtimeCanvas.transform, false);
+            runtimeMenuRoot = menuObj.GetComponent<RectTransform>();
         }
-        ConfigureMenuRoot();
+        else if (menuRoot != null)
+        {
+            runtimeMenuRoot = menuRoot;
+            if (runtimeMenuRoot.transform.parent != runtimeCanvas.transform)
+                runtimeMenuRoot.SetParent(runtimeCanvas.transform, false);
+        }
+        else
+        {
+            GameObject panelObj = new GameObject("GeneratorMenuPanel", typeof(RectTransform), typeof(Image));
+            panelObj.transform.SetParent(runtimeCanvas.transform, false);
+            runtimeMenuRoot = panelObj.GetComponent<RectTransform>();
+            runtimeMenuRoot.sizeDelta = menuSize;
+        }
 
-        Button closeButton = CreateRuntimeButton("CloseButton", runtimeMenuRoot, closeButtonPosition, buttonSize);
-        closeButton.onClick.RemoveAllListeners();
-        closeButton.onClick.AddListener(CloseMenu);
-        SetButtonLabel(closeButton.gameObject, "Close");
+        ConfigureMenuRoot(runtimeMenuRoot);
 
-        Transform scrollContent = ResolveScrollContent();
-        runtimeItemContainer = ResolveItemContainer(scrollContent);
+        // 3. Resolve References from Prefab
+        ResolveInternalReferences();
+
+        // 4. Wire up Close Button
+        if (closeButton != null)
+        {
+            closeButton.onClick.RemoveAllListeners();
+            closeButton.onClick.AddListener(CloseMenu);
+        }
+    }
+
+    private void ResolveInternalReferences()
+    {
+        if (productionProgressFill == null) productionProgressFill = FindComponentByName<Image>(runtimeMenuRoot, "Fill");
+        if (productionProgressTMP == null) productionProgressTMP = FindComponentByName<TMP_Text>(runtimeMenuRoot, "Label");
+        if (inputStatusTMP == null) inputStatusTMP = FindComponentByName<TMP_Text>(runtimeMenuRoot, "InputStatus");
+        if (countersTMP == null) countersTMP = FindComponentByName<TMP_Text>(runtimeMenuRoot, "Counters");
+        if (closeButton == null) closeButton = FindComponentByName<Button>(runtimeMenuRoot, "CloseButton");
+        
+        if (itemButtonContainer == null)
+        {
+            ScrollRect scroll = runtimeMenuRoot.GetComponentInChildren<ScrollRect>(true);
+            if (scroll != null) itemButtonContainer = scroll.content;
+            else itemButtonContainer = runtimeMenuRoot;
+        }
+    }
+
+    private T FindComponentByName<T>(Transform root, string name) where T : Component
+    {
+        T[] components = root.GetComponentsInChildren<T>(true);
+        foreach (T c in components)
+        {
+            if (c.name == name) return c;
+        }
+        return null;
+    }
+
+    private void ConfigureMenuRoot(RectTransform rect)
+    {
+        rect.anchorMin = new Vector2(0f, 1f);
+        rect.anchorMax = new Vector2(0f, 1f);
+        rect.pivot = new Vector2(0f, 1f);
+        rect.anchoredPosition = menuScreenPosition;
+        rect.localScale = Vector3.one;
     }
 
     private void HandleOpenShortcut()
@@ -195,167 +257,10 @@ public class ProductionMachineUI : MonoBehaviour
         return hoveredMachineUI != null;
     }
 
-    private Canvas ResolveCanvas()
+    private struct MenuEntry
     {
-        if (IsSceneObject(menuPanel))
-        {
-            return menuPanel;
-        }
-
-        if (menuPanel != null)
-        {
-            return Instantiate(menuPanel);
-        }
-
-        return null;
-    }
-
-    private void ConfigureCanvas()
-    {
-        runtimeCanvas.transform.SetParent(null, false);
-        runtimeCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        runtimeCanvas.worldCamera = null;
-        runtimeCanvas.sortingOrder = 100;
-
-        if (runtimeCanvasRect != null)
-        {
-            runtimeCanvasRect.anchorMin = Vector2.zero;
-            runtimeCanvasRect.anchorMax = Vector2.zero;
-            runtimeCanvasRect.pivot = Vector2.zero;
-            runtimeCanvasRect.sizeDelta = canvasSize;
-            runtimeCanvasRect.anchoredPosition = Vector2.zero;
-            runtimeCanvasRect.localScale = Vector3.one;
-        }
-    }
-
-    private RectTransform ResolveMenuRoot()
-    {
-        Transform namedRoot = runtimeCanvas.transform.Find("GeneratorMenuPanel");
-        if (namedRoot != null)
-        {
-            return namedRoot as RectTransform;
-        }
-
-        Image image = runtimeCanvas.GetComponentInChildren<Image>(true);
-        return image != null ? image.GetComponent<RectTransform>() : null;
-    }
-
-    private void ConfigureMenuRoot()
-    {
-        runtimeMenuRoot.anchorMin = new Vector2(0f, 1f);
-        runtimeMenuRoot.anchorMax = new Vector2(0f, 1f);
-        runtimeMenuRoot.pivot = new Vector2(0f, 1f);
-        runtimeMenuRoot.sizeDelta = menuSize;
-        runtimeMenuRoot.anchoredPosition = menuScreenPosition;
-        runtimeMenuRoot.localScale = Vector3.one;
-    }
-
-    private Transform ResolveScrollContent()
-    {
-        ScrollRect scrollRect = runtimeMenuRoot.GetComponentInChildren<ScrollRect>(true);
-        if (scrollRect != null && scrollRect.content != null)
-        {
-            RectTransform contentRect = scrollRect.content;
-            contentRect.anchorMin = new Vector2(0f, 1f);
-            contentRect.anchorMax = new Vector2(1f, 1f);
-            contentRect.pivot = new Vector2(0.5f, 1f);
-            contentRect.localScale = Vector3.one;
-            return contentRect;
-        }
-
-        return runtimeMenuRoot;
-    }
-
-    private Transform ResolveItemContainer(Transform parent)
-    {
-        Transform container;
-
-        if (IsSceneObject(itemButtonContainer))
-        {
-            container = itemButtonContainer;
-            container.SetParent(parent, false);
-        }
-        else if (itemButtonContainer != null)
-        {
-            container = Instantiate(itemButtonContainer, parent);
-        }
-        else
-        {
-            GameObject containerObject = new GameObject("ItemButtonContainer", typeof(RectTransform), typeof(VerticalLayoutGroup));
-            containerObject.transform.SetParent(parent, false);
-            container = containerObject.transform;
-        }
-
-        RectTransform rectTransform = container as RectTransform;
-        if (rectTransform != null)
-        {
-            rectTransform.anchorMin = new Vector2(0f, 1f);
-            rectTransform.anchorMax = new Vector2(1f, 1f);
-            rectTransform.pivot = new Vector2(0.5f, 1f);
-            rectTransform.anchoredPosition = Vector2.zero;
-            rectTransform.offsetMin = Vector2.zero;
-            rectTransform.offsetMax = Vector2.zero;
-            rectTransform.localScale = Vector3.one;
-        }
-
-        VerticalLayoutGroup layout = container.GetComponent<VerticalLayoutGroup>();
-        if (layout == null)
-        {
-            layout = container.gameObject.AddComponent<VerticalLayoutGroup>();
-        }
-        layout.spacing = 6f;
-        layout.childAlignment = TextAnchor.UpperCenter;
-        layout.childControlWidth = true;
-        layout.childControlHeight = false;
-        layout.childForceExpandWidth = true;
-        layout.childForceExpandHeight = false;
-
-        ContentSizeFitter fitter = container.GetComponent<ContentSizeFitter>();
-        if (fitter == null)
-        {
-            fitter = container.gameObject.AddComponent<ContentSizeFitter>();
-        }
-        fitter.horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
-        fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
-
-        return container;
-    }
-
-    private Button CreateRuntimeButton(string objectName, Transform parent, Vector2 anchoredPosition, Vector2 size)
-    {
-        Button template = openMenuButton;
-        Button button;
-
-        if (template != null)
-        {
-            button = Instantiate(template, parent);
-        }
-        else
-        {
-            GameObject buttonObject = new GameObject(objectName, typeof(RectTransform), typeof(Image), typeof(Button));
-            buttonObject.transform.SetParent(parent, false);
-            button = buttonObject.GetComponent<Button>();
-        }
-
-        button.gameObject.name = objectName;
-        ConfigureButtonRect(button.GetComponent<RectTransform>(), anchoredPosition, size);
-        return button;
-    }
-
-    private void ConfigureButtonRect(RectTransform rectTransform, Vector2 anchoredPosition, Vector2 size)
-    {
-        if (rectTransform == null)
-        {
-            return;
-        }
-
-        rectTransform.anchorMin = new Vector2(0f, 1f);
-        rectTransform.anchorMax = new Vector2(0f, 1f);
-        rectTransform.pivot = new Vector2(0f, 1f);
-        rectTransform.anchoredPosition = anchoredPosition;
-        rectTransform.sizeDelta = size;
-        rectTransform.localScale = Vector3.one;
-        rectTransform.localRotation = Quaternion.identity;
+        public ItemSO Item;
+        public string Label;
     }
 
     private void CreateItemButtons()
@@ -370,27 +275,17 @@ public class ProductionMachineUI : MonoBehaviour
         spawnedButtons.Clear();
         itemButtonViews.Clear();
 
-        if (runtimeItemContainer == null)
+        if (itemButtonContainer == null || itemButtonPrefab == null)
         {
-            Debug.LogWarning("ProductionMachineUI is missing an item button container.");
             return;
         }
 
-        if (itemButtonPrefab == null)
+        foreach (MenuEntry entry in GetMenuEntries())
         {
-            Debug.LogWarning("ProductionMachineUI is missing the item button prefab.");
-            return;
-        }
+            if (entry.Item == null) continue;
 
-        foreach (ItemSO item in GetMenuItems())
-        {
-            if (item == null)
-            {
-                continue;
-            }
-
-            GameObject buttonObject = Instantiate(itemButtonPrefab, runtimeItemContainer);
-            buttonObject.name = $"Item_{item.displayName}";
+            GameObject buttonObject = Instantiate(itemButtonPrefab, itemButtonContainer);
+            buttonObject.name = $"Item_{entry.Label}";
             spawnedButtons.Add(buttonObject);
 
             RectTransform rectTransform = buttonObject.GetComponent<RectTransform>();
@@ -403,19 +298,19 @@ public class ProductionMachineUI : MonoBehaviour
                 rectTransform.localScale = Vector3.one;
             }
 
-            SetButtonLabel(buttonObject, item.displayName);
+            SetButtonLabel(buttonObject, entry.Label);
 
             Button button = buttonObject.GetComponent<Button>();
             if (button != null)
             {
-                ItemSO selectedItem = item;
+                ItemSO selectedItem = entry.Item;
                 button.onClick.RemoveAllListeners();
                 button.onClick.AddListener(() => SelectItem(selectedItem));
             }
 
             itemButtonViews.Add(new ItemButtonView
             {
-                Item = item,
+                Item = entry.Item,
                 RootObject = buttonObject,
                 Button = button,
                 TmpText = buttonObject.GetComponentInChildren<TMP_Text>(true),
@@ -429,10 +324,7 @@ public class ProductionMachineUI : MonoBehaviour
 
     public void OpenMenu()
     {
-        if (runtimeMenuRoot == null)
-        {
-            return;
-        }
+        if (runtimeMenuRoot == null) return;
 
         if (openInstance != null && openInstance != this)
         {
@@ -465,19 +357,30 @@ public class ProductionMachineUI : MonoBehaviour
         }
 
         RefreshSelectedItemVisuals();
-        CloseMenu();
     }
 
     private void SetButtonLabel(GameObject buttonObject, string label)
     {
-        TMP_Text tmpText = buttonObject.GetComponentInChildren<TMP_Text>(true);
-        if (tmpText != null)
+        if (string.IsNullOrEmpty(label)) label = "Unknown";
+
+        // Try TextMeshProUGUI first (specific)
+        var tmp = buttonObject.GetComponentInChildren<TextMeshProUGUI>(true);
+        if (tmp != null)
         {
-            tmpText.text = label;
+            tmp.text = label;
             return;
         }
 
-        Text text = buttonObject.GetComponentInChildren<Text>(true);
+        // Try TMP_Text base class
+        var tmpBase = buttonObject.GetComponentInChildren<TMP_Text>(true);
+        if (tmpBase != null)
+        {
+            tmpBase.text = label;
+            return;
+        }
+
+        // Try Legacy Text
+        var text = buttonObject.GetComponentInChildren<Text>(true);
         if (text != null)
         {
             text.text = label;
@@ -511,24 +414,90 @@ public class ProductionMachineUI : MonoBehaviour
         }
     }
 
-    private IEnumerable<ItemSO> GetMenuItems()
+    private void RefreshProductionProgressVisual()
     {
-        if (availableItems.Count > 0)
+        if (machine == null || productionProgressFill == null || productionProgressTMP == null)
         {
-            return availableItems;
+            return;
         }
 
-        ItemSO currentItem = machine != null ? machine.GetOutputItem() : null;
-        if (currentItem != null)
+        ItemSO selectedItem = machine.GetOutputItem();
+        float duration = machine.GetProductionDuration();
+        float elapsed = machine.GetProductionElapsedTime();
+        float progress = machine.GetProductionProgressNormalized();
+
+        if (selectedItem == null)
         {
-            return new[] { currentItem };
+            productionProgressFill.fillAmount = 0f;
+            productionProgressTMP.text = "Select output item";
+            if (inputStatusTMP != null) inputStatusTMP.text = "";
+            if (countersTMP != null) countersTMP.text = "";
+            return;
         }
 
-        return System.Array.Empty<ItemSO>();
+        productionProgressFill.fillAmount = Mathf.Clamp01(progress);
+
+        if (duration <= 0f)
+        {
+            productionProgressTMP.text = $"{selectedItem.displayName}: ready";
+        }
+        else
+        {
+            productionProgressTMP.text = $"{selectedItem.displayName}: {elapsed:0.0}s / {duration:0.0}s";
+        }
+
+        if (machine is Processor processor)
+        {
+            if (inputStatusTMP != null) inputStatusTMP.text = processor.GetInputBufferStatus();
+            if (countersTMP != null) countersTMP.text = $"In: {processor.GetTotalReceived()} | Out: {processor.GetTotalProduced()}";
+        }
     }
 
-    private bool IsSceneObject(Component component)
+    private IEnumerable<MenuEntry> GetMenuEntries()
     {
-        return component != null && component.gameObject.scene.IsValid();
+        List<MenuEntry> entries = new List<MenuEntry>();
+
+        if (machine is Processor processor)
+        {
+            var recipes = processor.GetRecipes();
+            if (recipes != null && recipes.Count > 0)
+            {
+                foreach (var r in recipes)
+                {
+                    if (r != null && r.outputItem != null)
+                    {
+                        // Use Recipe Name for Processors
+                        entries.Add(new MenuEntry { Item = r.outputItem, Label = "Recipe: " + r.name });
+                    }
+                }
+                return entries;
+            }
+        }
+
+        if (availableItems.Count > 0)
+        {
+            foreach (var item in availableItems)
+            {
+                if (item == null) continue;
+                entries.Add(new MenuEntry { Item = item, Label = item.displayName });
+            }
+            return entries;
+        }
+
+        if (machine is Generator generator)
+        {
+            ItemSO item = generator.GetOutputItem();
+            if (item != null)
+            {
+                entries.Add(new MenuEntry { Item = item, Label = item.displayName });
+            }
+        }
+
+        return entries;
+    }
+
+    private bool IsGhostPreviewInstance()
+    {
+        return GetComponentInParent<BuildingGhost>() != null;
     }
 }

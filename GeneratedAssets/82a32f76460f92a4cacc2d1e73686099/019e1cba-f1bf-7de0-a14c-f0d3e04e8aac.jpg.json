@@ -1,0 +1,28 @@
+{
+    "asset": "82a32f76460f92a4cacc2d1e73686099",
+    "fileName": "019e1cba-f1bf-7de0-a14c-f0d3e04e8aac.jpg",
+    "prompt": "top down view of a 90 degree curved conveyor belt segment, industrial yellow and black stripes, metallic gray frame, flat clean game asset, pixel art style or clean vector style",
+    "negativePrompt": "",
+    "model": "game-ui-essentials-2",
+    "modelName": "Game UI Essentials 2.0",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 2048,
+        "height": 2048
+    },
+    "spriteSheet": false,
+    "duration": 0.0
+}

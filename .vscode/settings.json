@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Factory kitchen.sln"
+    "dotnet.defaultSolution": "Factory kitchen.slnx"
 }

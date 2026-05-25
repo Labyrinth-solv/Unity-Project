@@ -35,23 +35,44 @@ public class Grabber : MonoBehaviour, IItemEndpoint, ITickable
 
     public void Tick(float deltaTime)
     {
-        // Nếu chưa có item, thử grab từ source
-        if (item == null && !isGrabbing)
+        if (item == null)
         {
-            TryStartGrabbing();
-        }
+            if (!isGrabbing)
+            {
+                // Start moving towards source
+                isGrabbing = true;
+            }
 
-        // Nếu đang grab, tăng progress
-        if (isGrabbing)
-        {
-            GrabItemProgress(deltaTime);
-        }
+            // Progress towards 0 (Source)
+            grabProgress = Mathf.Max(0f, grabProgress - grabSpeed * deltaTime);
+            UpdateItemVisualPosition();
 
-        // Nếu đã grab xong item, thử transfer đến output
-        if (item != null && grabProgress >= 1f && !isGrabbing)
-        {
-            TryTransferItemToNextEndpoint();
+            if (grabProgress <= 0f)
+            {
+                TryPickUpItem();
+            }
         }
+        else
+        {
+            // Have item, move towards 1 (Destination)
+            grabProgress = Mathf.Min(1f, grabProgress + grabSpeed * deltaTime);
+            UpdateItemVisualPosition();
+
+            if (grabProgress >= 1f)
+            {
+                TryTransferItemToNextEndpoint();
+            }
+        }
+    }
+
+    private void TryPickUpItem()
+    {
+        if (!TryGetSourceEndpoint(out IItemEndpoint source)) return;
+        if (!source.CanProvide()) return;
+
+        item = source.Peek();
+        source.Consume();
+        CreateItemVisual();
     }
 
     #region Grabbing Logic

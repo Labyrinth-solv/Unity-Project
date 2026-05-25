@@ -43,7 +43,6 @@ public class ConveyorBelt : MonoBehaviour, IItemTransporter, IItemEndpoint, ITic
         }
     }
 
-    // Transport state used by other components that need to inspect the belt.
     public bool HasItem() => item != null;
     public ItemSO PeekItem() => item;
     public void RemoveItem()
@@ -64,7 +63,6 @@ public class ConveyorBelt : MonoBehaviour, IItemTransporter, IItemEndpoint, ITic
         return new Vector3(direction.x, 0f, direction.y);
     }
 
-    // Input side. A belt can receive only one item at a time.
     public bool CanReceive() => item == null;
     public bool TryReceive(ItemSO item)
     {
@@ -77,7 +75,6 @@ public class ConveyorBelt : MonoBehaviour, IItemTransporter, IItemEndpoint, ITic
         return true;
     }
 
-    // Output side. The item is considered available only at the end of the belt.
     public bool CanProvide() => item != null && progress >= 1f;
     public ItemSO Peek() => item;
     public void Consume() => RemoveItem();
@@ -109,9 +106,6 @@ public class ConveyorBelt : MonoBehaviour, IItemTransporter, IItemEndpoint, ITic
         if (GridBuildingSystem.Instance == null || placedObject == null) return false;
         if (!placedObject.TryGetOutputGridPosition(out Vector2Int outputGridPosition))
         {
-            // A belt can exist as a prefab/scene object before the grid building
-            // system initializes its PlacedObject data. In that state it can
-            // still animate a demo item, but it cannot know the next grid cell.
             return false;
         }
 
@@ -122,8 +116,6 @@ public class ConveyorBelt : MonoBehaviour, IItemTransporter, IItemEndpoint, ITic
 
         if (nextPlacedObject == placedObject) return false;
 
-        // Components are discovered through their interface, so the conveyor
-        // can connect to belts, buffers, storages, or future machines.
         MonoBehaviour[] behaviours = nextPlacedObject.GetComponentsInChildren<MonoBehaviour>();
         foreach (MonoBehaviour behaviour in behaviours)
         {
@@ -155,29 +147,50 @@ public class ConveyorBelt : MonoBehaviour, IItemTransporter, IItemEndpoint, ITic
         if (item == null) return;
 
         Transform parent = itemVisualParent != null ? itemVisualParent : transform;
+        
+        GameObject wrapper = new GameObject("ItemWrapper");
+        wrapper.transform.SetParent(parent, false);
+        itemVisual = wrapper;
+
+        GameObject actualVisual;
         if (item.visualPrefab != null)
         {
-            itemVisual = Instantiate(item.visualPrefab, parent);
-            return;
+            actualVisual = Instantiate(item.visualPrefab, wrapper.transform);
+        }
+        else
+        {
+            actualVisual = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            actualVisual.transform.SetParent(wrapper.transform, false);
+            actualVisual.transform.localScale = fallbackVisualScale;
+            Renderer r = actualVisual.GetComponent<Renderer>();
+            if (r != null) r.material.color = fallbackVisualColor;
+            Destroy(actualVisual.GetComponent<Collider>());
         }
 
-        // Fallback for early testing: ItemSO can move on the belt even before
-        // the item has its final art prefab assigned in the Inspector.
-        itemVisual = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        itemVisual.name = !string.IsNullOrEmpty(item.displayName) ? item.displayName : "Demo Item";
-        itemVisual.transform.SetParent(parent, false);
-        itemVisual.transform.localScale = fallbackVisualScale;
+        CenterAndScaleVisual(actualVisual);
+    }
 
-        Collider itemCollider = itemVisual.GetComponent<Collider>();
-        if (itemCollider != null)
+    private void CenterAndScaleVisual(GameObject visual)
+    {
+        Renderer[] renderers = visual.GetComponentsInChildren<Renderer>();
+        if (renderers.Length == 0) return;
+
+        Bounds bounds = renderers[0].bounds;
+        bool first = true;
+        foreach (var r in renderers)
         {
-            Destroy(itemCollider);
+            if (first) { bounds = r.bounds; first = false; }
+            else bounds.Encapsulate(r.bounds);
         }
 
-        Renderer renderer = itemVisual.GetComponent<Renderer>();
-        if (renderer != null)
+        Vector3 localCenter = visual.transform.InverseTransformPoint(bounds.center);
+        visual.transform.localPosition = -localCenter;
+        
+        float maxDim = Mathf.Max(bounds.size.x, bounds.size.z);
+        if (maxDim > 0.8f)
         {
-            renderer.material.color = fallbackVisualColor;
+            float scale = 0.6f / maxDim;
+            visual.transform.localScale *= scale;
         }
     }
 
@@ -193,9 +206,6 @@ public class ConveyorBelt : MonoBehaviour, IItemTransporter, IItemEndpoint, ITic
     {
         if (itemVisual == null) return;
 
-        // The prefab's zero-rotation direction is Right, so the default local
-        // movement path is left-to-right on local X. The placed object's
-        // rotation turns this same local path into Down/Left/Up as needed.
         itemVisual.transform.localPosition = Vector3.Lerp(itemVisualStartOffset, itemVisualEndOffset, progress);
         itemVisual.transform.localRotation = Quaternion.identity;
     }

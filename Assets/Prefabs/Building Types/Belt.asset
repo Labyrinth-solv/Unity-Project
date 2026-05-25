@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164c34a930262a944851dcbb6bbe4d3a, type: 3}
   m_Name: Belt
   m_EditorClassIdentifier: 
-  nameString: b
-  prefab: {fileID: 8245180704939488997, guid: 31392fcb0100200428dba64a1dfbaf60, type: 3}
-  visual: {fileID: 8245180704939488997, guid: 31392fcb0100200428dba64a1dfbaf60, type: 3}
+  nameString: Conveyor
+  prefab: {fileID: 2696455601780506975, guid: 4f7986ceaf2c3364399dbbdbce4beecb, type: 3}
+  visual: {fileID: 2696455601780506975, guid: 4f7986ceaf2c3364399dbbdbce4beecb, type: 3}
   width: 1
   height: 1

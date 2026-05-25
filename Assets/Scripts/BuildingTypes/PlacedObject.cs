@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlacedObject : MonoBehaviour
 {
+    [SerializeField] private bool canBeDestroyed = true;
     private PlacedObjectTypeSO placedObjectTypeSO;
     private Vector2Int origin;
     private PlacedObjectTypeSO.Dir dir;
@@ -25,8 +26,18 @@ public class PlacedObject : MonoBehaviour
         isInitialized=placedObjectTypeSO != null;
     }
 
-    public void DestroySelf()
+    public bool CanBeDestroyed()
     {
+        return canBeDestroyed;
+    }
+
+    public void SetCanBeDestroyed(bool canBeDestroyed)
+    {
+        this.canBeDestroyed = canBeDestroyed;
+    }
+
+    public void DestroySelf()
+{
         Destroy(gameObject);
     }
 

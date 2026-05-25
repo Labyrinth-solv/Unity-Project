@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1efcaf241866dd4caf189c4fe99ea77, type: 3}
+  m_Name: HamburgerRecipe
+  m_EditorClassIdentifier: 
+  ingredients:
+  - item: {fileID: 11400000, guid: ce73fc744a583d1459df1aff93a44aff, type: 2}
+    count: 2
+  - item: {fileID: 11400000, guid: 8d3288a05f82397448f3a8a1ce6e6507, type: 2}
+    count: 1
+  - item: {fileID: 11400000, guid: fcf2c77159987584d8ff55e111b8f2a5, type: 2}
+    count: 1
+  outputItem: {fileID: 11400000, guid: 5dba4e56a9303194696b804e1b86c972, type: 2}
+  processingTime: 2

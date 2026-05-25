@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 164c34a930262a944851dcbb6bbe4d3a, type: 3}
   m_Name: Generator
   m_EditorClassIdentifier: 
-  nameString: a
-  prefab: {fileID: 4330079240739138211, guid: 4e47c152d0f0843419bc3c8556673b47, type: 3}
-  visual: {fileID: 4330079240739138211, guid: 3dd722876111c7f40984f68f0a675747, type: 3}
-  width: 4
+  nameString: Generator
+  prefab: {fileID: 8069080084605235530, guid: 2b63523ab133d0648b54d57225353d75, type: 3}
+  visual: {fileID: 8069080084605235530, guid: 2b63523ab133d0648b54d57225353d75, type: 3}
+  width: 2
   height: 2
