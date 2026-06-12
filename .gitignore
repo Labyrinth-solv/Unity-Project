@@ -24,5 +24,8 @@ UserSettings/
 .DS_Store
 Thumbs.db
 
-# Markdown files
+# Ignore markdown files
 *.md
+
+# But keep README
+!README.md
