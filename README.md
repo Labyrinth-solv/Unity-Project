@@ -22,14 +22,6 @@ Sau khi tải `FactoryGame_Release.zip`, thực hiện các bước sau:
 FactoryGame.exe
 ```
 
-Lưu ý: Không xóa các file và thư mục đi kèm trong bản build, ví dụ:
-
-```text
-FactoryGame_Data
-UnityPlayer.dll
-MonoBleedingEdge
-```
-
 Các thành phần này cần thiết để game có thể chạy bình thường.
 
 ## Tài khoản đăng nhập demo
