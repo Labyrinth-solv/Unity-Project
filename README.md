@@ -41,7 +41,7 @@ Người chơi có thể sử dụng tài khoản demo sau để đăng nhập:
 | Xoay công trình    | `R`             |
 | Xoay camera        | `Ctrl + R`      |
 | Mở menu công trình | `Q`             |
-| Thoats công trình     | `X`             |
+| Thoát chế độ xây  dựng   | `X`             |
 
 ## Yêu cầu hệ thống
 
