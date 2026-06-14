@@ -3,9 +3,6 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Text;
 using TMPro;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
 public class RecipeBookUI : MonoBehaviour
 {
@@ -44,62 +41,83 @@ public class RecipeBookUI : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        // Gather all recipes in the project
-        List<ProcessorRecipeSO> allRecipes = new List<ProcessorRecipeSO>();
-#if UNITY_EDITOR
-        string[] guids = AssetDatabase.FindAssets("t:ProcessorRecipeSO");
-        foreach (string guid in guids)
-        {
-            string path = AssetDatabase.GUIDToAssetPath(guid);
-            ProcessorRecipeSO recipe = AssetDatabase.LoadAssetAtPath<ProcessorRecipeSO>(path);
-            if (recipe != null) allRecipes.Add(recipe);
-        }
-#endif
+        HashSet<ProcessorRecipeSO> seenProcessorRecipes = new HashSet<ProcessorRecipeSO>();
+        HashSet<ItemSO> seenGeneratorOutputs = new HashSet<ItemSO>();
 
-        foreach (var r in allRecipes)
+        foreach (Processor processor in Object.FindObjectsByType<Processor>(FindObjectsSortMode.None))
         {
-            CreateRecipeRow("Processor", r);
+            AddProcessorRecipes(processor.GetMachineName(), processor.GetRecipes(), seenProcessorRecipes);
         }
 
-        // Gather all Generator configurations from PlacedObjectTypeSOs
-        // (Assuming Generators are defined in the PlacedObjectTypeSO list in GridBuildingSystem)
+        foreach (Generator generator in Object.FindObjectsByType<Generator>(FindObjectsSortMode.None))
+        {
+            AddGeneratorOutputs(generator.GetMachineName(), generator, generator.GetComponent<ProductionMachineUI>(), seenGeneratorOutputs);
+        }
+
         if (GridBuildingSystem.Instance != null)
         {
-            // We need to access the list of building types. 
-            // Since it's private in GridBuildingSystem, we'll try to find any Generator prefabs/instances.
-            Generator[] sceneGenerators = Object.FindObjectsByType<Generator>(FindObjectsSortMode.None);
-            HashSet<ItemSO> seenGenerators = new HashSet<ItemSO>();
-            foreach (var g in sceneGenerators)
+            IReadOnlyList<PlacedObjectTypeSO> placedObjectTypes = GridBuildingSystem.Instance.GetPlacedObjectTypes();
+            if (placedObjectTypes == null) return;
+
+            foreach (PlacedObjectTypeSO type in placedObjectTypes)
             {
-                ItemSO output = g.GetOutputItem();
-                if (output == null || seenGenerators.Contains(output)) continue;
-                seenGenerators.Add(output);
-                CreateGeneratorRow(g.GetMachineName(), output);
+                AddMachineRecipesFromPrefab(type, seenProcessorRecipes, seenGeneratorOutputs);
             }
-            
-            // If no scene generators, maybe check if we can find them in project
-#if UNITY_EDITOR
-            string[] buildingGuids = AssetDatabase.FindAssets("t:PlacedObjectTypeSO");
-            foreach (string guid in buildingGuids)
-            {
-                string path = AssetDatabase.GUIDToAssetPath(guid);
-                PlacedObjectTypeSO type = AssetDatabase.LoadAssetAtPath<PlacedObjectTypeSO>(path);
-                if (type != null && type.prefab != null)
-                {
-                    Generator g = type.prefab.GetComponent<Generator>();
-                    if (g != null)
-                    {
-                        ItemSO output = g.GetOutputItem();
-                        if (output != null && !seenGenerators.Contains(output))
-                        {
-                            seenGenerators.Add(output);
-                            CreateGeneratorRow(g.GetMachineName(), output);
-                        }
-                    }
-                }
-            }
-#endif
         }
+    }
+
+    private void AddMachineRecipesFromPrefab(PlacedObjectTypeSO type, HashSet<ProcessorRecipeSO> seenProcessorRecipes, HashSet<ItemSO> seenGeneratorOutputs)
+    {
+        if (type == null || type.prefab == null) return;
+
+        Processor processor = type.prefab.GetComponent<Processor>();
+        if (processor != null)
+        {
+            AddProcessorRecipes(processor.GetMachineName(), processor.GetRecipes(), seenProcessorRecipes);
+        }
+
+        Generator generator = type.prefab.GetComponent<Generator>();
+        if (generator != null)
+        {
+            AddGeneratorOutputs(generator.GetMachineName(), generator, type.prefab.GetComponent<ProductionMachineUI>(), seenGeneratorOutputs);
+        }
+    }
+
+    private void AddProcessorRecipes(string machineName, List<ProcessorRecipeSO> recipes, HashSet<ProcessorRecipeSO> seenRecipes)
+    {
+        if (recipes == null) return;
+
+        foreach (ProcessorRecipeSO recipe in recipes)
+        {
+            if (recipe == null || seenRecipes.Contains(recipe)) continue;
+
+            seenRecipes.Add(recipe);
+            CreateRecipeRow(machineName, recipe);
+        }
+    }
+
+    private void AddGeneratorOutputs(string machineName, Generator generator, ProductionMachineUI machineUI, HashSet<ItemSO> seenOutputs)
+    {
+        if (generator != null)
+        {
+            AddGeneratorOutput(machineName, generator.GetOutputItem(), seenOutputs);
+        }
+
+        IReadOnlyList<ItemSO> availableItems = machineUI != null ? machineUI.GetAvailableItems() : null;
+        if (availableItems == null) return;
+
+        foreach (ItemSO item in availableItems)
+        {
+            AddGeneratorOutput(machineName, item, seenOutputs);
+        }
+    }
+
+    private void AddGeneratorOutput(string machineName, ItemSO output, HashSet<ItemSO> seenOutputs)
+    {
+        if (output == null || seenOutputs.Contains(output)) return;
+
+        seenOutputs.Add(output);
+        CreateGeneratorRow(machineName, output);
     }
 
     private void CreateRecipeRow(string machineName, ProcessorRecipeSO recipe)

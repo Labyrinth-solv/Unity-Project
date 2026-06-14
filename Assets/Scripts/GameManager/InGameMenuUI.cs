@@ -24,6 +24,8 @@ public class InGameMenuUI : MonoBehaviour
     [SerializeField] private Button restartButton;
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button exitButton;
+    [SerializeField] private Button viewLeaderboard;
+
     [SerializeField] private Button closeLevelSelectedButton;
 
     [Header("Level Buttons")]

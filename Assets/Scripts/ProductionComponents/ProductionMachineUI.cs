@@ -32,6 +32,11 @@ public class ProductionMachineUI : MonoBehaviour
     [Header("Items")]
     [SerializeField] private List<ItemSO> availableItems = new List<ItemSO>();
 
+    public IReadOnlyList<ItemSO> GetAvailableItems()
+    {
+        return availableItems;
+    }
+
     [Header("Screen UI Layout (Legacy/Fallback)")]
     [SerializeField] private Vector2 canvasSize = new Vector2(460f, 320f);
     [SerializeField] private Vector2 menuSize = new Vector2(440f, 400f);

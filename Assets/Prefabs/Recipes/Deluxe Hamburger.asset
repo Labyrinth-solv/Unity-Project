@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1efcaf241866dd4caf189c4fe99ea77, type: 3}
+  m_Name: Deluxe Hamburger
+  m_EditorClassIdentifier: 
+  ingredients:
+  - item: {fileID: 11400000, guid: fcf2c77159987584d8ff55e111b8f2a5, type: 2}
+    count: 2
+  - item: {fileID: 11400000, guid: 8d3288a05f82397448f3a8a1ce6e6507, type: 2}
+    count: 1
+  - item: {fileID: 11400000, guid: 2410de609057e1d4a88f0384ebb72a84, type: 2}
+    count: 1
+  - item: {fileID: 11400000, guid: fcf2c77159987584d8ff55e111b8f2a5, type: 2}
+    count: 1
+  - item: {fileID: 11400000, guid: a23fa7e425ef4ce4491224c8ca28be73, type: 2}
+    count: 1
+  outputItem: {fileID: 11400000, guid: b02a74499fc2b6443bb448f638f1ccfd, type: 2}
+  processingTime: 2

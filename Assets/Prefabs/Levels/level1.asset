@@ -15,7 +15,7 @@ MonoBehaviour:
   goalName: Production Target
   score: 10
   itemGoals:
-  - targetItem: {fileID: 11400000, guid: fcf2c77159987584d8ff55e111b8f2a5, type: 2}
+  - targetItem: {fileID: 11400000, guid: 5dba4e56a9303194696b804e1b86c972, type: 2}
     requiredRatePerSecond: 0.5
     sampleWindow: 10
   machinePlacementLimits:
@@ -23,3 +23,5 @@ MonoBehaviour:
     maxCount: 1
   - machineType: {fileID: 11400000, guid: a089135e74b084547a0096620ed43dc6, type: 2}
     maxCount: 4
+  - machineType: {fileID: 11400000, guid: 8c2bf52ec1fea164a90f15c1d94f4795, type: 2}
+    maxCount: 0

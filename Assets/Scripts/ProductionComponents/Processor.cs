@@ -4,10 +4,20 @@ using System.Collections.Generic;
 public class Processor : MonoBehaviour, ITickable, IProductionMachine, IItemEndpoint
 {
     [SerializeField] private string machineName = "Processor";
-    [SerializeField] private List<ProcessorRecipeSO> recipes;
+    [SerializeField] private ProcessorRecipeListSO recipeList;
+    [SerializeField, HideInInspector] private List<ProcessorRecipeSO> recipes;
     
     public string GetMachineName() => machineName;
-    public List<ProcessorRecipeSO> GetRecipes() => recipes;
+    public List<ProcessorRecipeSO> GetRecipes()
+    {
+        if (recipeList != null)
+        {
+            return recipeList.Recipes;
+        }
+
+        return recipes;
+    }
+
     [SerializeField] private ProcessorRecipeSO currentRecipe;
 
     [System.Serializable]
@@ -26,7 +36,8 @@ public class Processor : MonoBehaviour, ITickable, IProductionMachine, IItemEndp
     private int totalItemsProduced;
 
     private void OnEnable()
-{
+    {
+        ValidateCurrentRecipe();
         TickManager.Register(this);
     }
 
@@ -120,7 +131,8 @@ public class Processor : MonoBehaviour, ITickable, IProductionMachine, IItemEndp
     // IProductionMachine Implementation
     public void SetOutputItem(ItemSO item)
     {
-        ProcessorRecipeSO newRecipe = (recipes != null) ? recipes.Find(r => r.outputItem == item) : null;
+        List<ProcessorRecipeSO> availableRecipes = GetRecipes();
+        ProcessorRecipeSO newRecipe = (availableRecipes != null) ? availableRecipes.Find(r => r != null && r.outputItem == item) : null;
         if (newRecipe != currentRecipe)
         {
             currentRecipe = newRecipe;
@@ -184,9 +196,22 @@ public class Processor : MonoBehaviour, ITickable, IProductionMachine, IItemEndp
     }
 
     public bool CanProvide() => outputBuffer != null;
-public ItemSO Peek() => outputBuffer;
+    public ItemSO Peek() => outputBuffer;
     public void Consume()
     {
         outputBuffer = null;
+    }
+
+    private void ValidateCurrentRecipe()
+    {
+        if (currentRecipe == null) return;
+
+        List<ProcessorRecipeSO> availableRecipes = GetRecipes();
+        if (availableRecipes == null || !availableRecipes.Contains(currentRecipe))
+        {
+            currentRecipe = null;
+            isProcessing = false;
+            timer = 0f;
+        }
     }
 }

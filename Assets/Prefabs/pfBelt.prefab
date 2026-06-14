@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: -8785295940127911356}
   - component: {fileID: -4593438638907036776}
   - component: {fileID: -5377275597770723750}
+  - component: {fileID: 3930012345678901234}
   m_Layer: 0
   m_Name: pfBelt
   m_TagString: Untagged
@@ -175,8 +176,8 @@ MonoBehaviour:
   speed: 2
   defaultDirection: 2
   itemVisualParent: {fileID: 0}
-  itemVisualStartOffset: {x: 0.4, y: 0.4, z: 0.5}
-  itemVisualEndOffset: {x: 0.9, y: 0.4, z: 0.5}
+  itemVisualStartOffset: {x: 0.4, y: 0.7, z: 0.5}
+  itemVisualEndOffset: {x: 0.9, y: 0.7, z: 0.5}
   fallbackVisualScale: {x: 0.25, y: 0.25, z: 0.25}
   fallbackVisualColor: {r: 1, g: 0.8, b: 0.2, a: 1}
 --- !u!114 &-5377275597770723750
@@ -198,6 +199,29 @@ MonoBehaviour:
   spawnOnlyWithoutInput: 1
   allowKeyboardSpawn: 1
   spawnKey: 116
+--- !u!114 &3930012345678901234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4771889139966208705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e1f6666b694820a79e4db368b78342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowRenderers:
+  - {fileID: 4075254927535115012}
+  - {fileID: 249416950619161826}
+  - {fileID: 66453315431919720}
+  dimColor: {r: 0.22, g: 0.22, b: 0.22, a: 1}
+  brightColor: {r: 1, g: 0.9, b: 0.2, a: 1}
+  blinkSpeed: 1.5
+  phaseOffsetPerArrow: 0.18
+  toggleVisibility: 1
+  visibleThreshold: 0.35
+  useEmission: 1
 --- !u!1 &7325391474695180070
 GameObject:
   m_ObjectHideFlags: 0

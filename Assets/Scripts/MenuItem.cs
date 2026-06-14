@@ -70,6 +70,7 @@ public class MenuItem : MonoBehaviour
     public void onButton2() => SetActionAndClick("button2");
     public void onButton3() => SetActionAndClick("button3");
     public void onButton4() => SetActionAndClick("button4");
+    public void onButton5() => SetActionAndClick("button5");
 
     private void SetActionAndClick(string newActionName)
     {

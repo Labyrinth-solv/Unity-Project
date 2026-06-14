@@ -84,6 +84,11 @@ public class GridBuildingSystem : MonoBehaviour
         return placedObjectTypeSOList[index];
     }
 
+    public IReadOnlyList<PlacedObjectTypeSO> GetPlacedObjectTypes()
+    {
+        return placedObjectTypeSOList;
+    }
+
     public bool TryGetRemainingPlacementCount(PlacedObjectTypeSO type, out int remainingCount)
     {
         remainingCount = 0;

@@ -18,8 +18,13 @@ MonoBehaviour:
   - targetItem: {fileID: 11400000, guid: 5dba4e56a9303194696b804e1b86c972, type: 2}
     requiredRatePerSecond: 0.5
     sampleWindow: 10
+  - targetItem: {fileID: 11400000, guid: fba6b75755d4fed44962058890860b83, type: 2}
+    requiredRatePerSecond: 0.5
+    sampleWindow: 10
   machinePlacementLimits:
   - machineType: {fileID: 11400000, guid: a089135e74b084547a0096620ed43dc6, type: 2}
-    maxCount: 4
+    maxCount: 8
   - machineType: {fileID: 11400000, guid: 8cf81a29feaa028429de76ddb52c3987, type: 2}
+    maxCount: 1
+  - machineType: {fileID: 11400000, guid: 8c2bf52ec1fea164a90f15c1d94f4795, type: 2}
     maxCount: 1

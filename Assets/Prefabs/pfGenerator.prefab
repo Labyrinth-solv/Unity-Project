@@ -78,6 +78,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 85a27c6d45af1cd4992fbfd06052b3af, type: 2}
   - {fileID: 11400000, guid: 8d3288a05f82397448f3a8a1ce6e6507, type: 2}
   - {fileID: 11400000, guid: fcf2c77159987584d8ff55e111b8f2a5, type: 2}
+  - {fileID: 11400000, guid: a23fa7e425ef4ce4491224c8ca28be73, type: 2}
+  - {fileID: 11400000, guid: 36b792f719bdf0e42a229a4bfe033816, type: 2}
+  - {fileID: 11400000, guid: bd618e8ee06b5d44291486a167792a49, type: 2}
+  - {fileID: 11400000, guid: 782393a673da7634fb19742dd880d8d4, type: 2}
+  - {fileID: 11400000, guid: 2410de609057e1d4a88f0384ebb72a84, type: 2}
   canvasSize: {x: 420, y: 260}
   menuSize: {x: 260, y: 240}
   menuScreenPosition: {x: 40, y: -40}

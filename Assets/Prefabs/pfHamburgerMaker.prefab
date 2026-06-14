@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   machineName: HamburgerMaker
+  recipeList: {fileID: 11400000, guid: 501a652c7b484977bba722d8ec95a418, type: 2}
   recipes:
   - {fileID: 11400000, guid: 6e81df84070dd784b9f5cbc7c84d2063, type: 2}
   currentRecipe: {fileID: 11400000, guid: 6e81df84070dd784b9f5cbc7c84d2063, type: 2}

@@ -1,0 +1,1677 @@
+fileFormatVersion: 2
+guid: bf955b75d27b0d34d8e4506b116c30cd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2738756225248243726
+    second: Dial_0
+  - first:
+      213: 6956174635603762710
+    second: Dial_1
+  - first:
+      213: 6718723988803884762
+    second: Dial_2
+  - first:
+      213: 5101565419752493673
+    second: Dial_3
+  - first:
+      213: -273393196889924716
+    second: Dial_4
+  - first:
+      213: 3506705265422951178
+    second: Dial_5
+  - first:
+      213: 6660634391265265742
+    second: Dial_6
+  - first:
+      213: 3944131360113653741
+    second: Dial_7
+  - first:
+      213: 1820987531640227252
+    second: Dial_8
+  - first:
+      213: -5691695333699359624
+    second: Dial_9
+  - first:
+      213: 787302083872288522
+    second: Dial_10
+  - first:
+      213: -1683052482738735770
+    second: Dial_11
+  - first:
+      213: 1793497383854090485
+    second: Dial_12
+  - first:
+      213: -4562404194794830492
+    second: Dial_13
+  - first:
+      213: -9211793145237452429
+    second: Dial_14
+  - first:
+      213: -8456561093337254003
+    second: Dial_15
+  - first:
+      213: -6543222458656086283
+    second: Dial_16
+  - first:
+      213: 6018408009267322308
+    second: Dial_17
+  - first:
+      213: -2665497671404729057
+    second: Dial_18
+  - first:
+      213: 4594347385703931529
+    second: Dial_19
+  - first:
+      213: 3135601242606739210
+    second: Dial_20
+  - first:
+      213: 1322880816425331268
+    second: Dial_21
+  - first:
+      213: -2863729428318583770
+    second: Dial_22
+  - first:
+      213: 76618621365633397
+    second: Dial_23
+  - first:
+      213: 3656765843184595454
+    second: Dial_24
+  - first:
+      213: 2837761753716083143
+    second: Dial_25
+  - first:
+      213: -3444187116641811881
+    second: Dial_26
+  - first:
+      213: -3518505754225306450
+    second: Dial_27
+  - first:
+      213: 7770695147302765792
+    second: Dial_28
+  - first:
+      213: -5926716191781610841
+    second: Dial_29
+  - first:
+      213: -5897249805665233600
+    second: Dial_30
+  - first:
+      213: -4594964573219015132
+    second: Dial_31
+  - first:
+      213: -3026891760971307428
+    second: Dial_32
+  - first:
+      213: -2074465489337492849
+    second: Dial_33
+  - first:
+      213: -4925074282934756116
+    second: Dial_34
+  - first:
+      213: 337022201475497480
+    second: Dial_35
+  - first:
+      213: 5318609904011100539
+    second: Dial_36
+  - first:
+      213: -4947798689030486653
+    second: Dial_37
+  - first:
+      213: 2755066921198566779
+    second: Dial_38
+  - first:
+      213: 7481063696442115677
+    second: Dial_39
+  - first:
+      213: -6858023486566289383
+    second: Dial_40
+  - first:
+      213: -7586322329615185356
+    second: Dial_41
+  - first:
+      213: -7119071771698322650
+    second: Dial_42
+  - first:
+      213: 7760844445871405873
+    second: Dial_43
+  - first:
+      213: -8107853886298317154
+    second: Dial_44
+  - first:
+      213: -7670528136153956596
+    second: Dial_45
+  - first:
+      213: 3858880360238473984
+    second: Dial_46
+  - first:
+      213: 8610018631202633074
+    second: Dial_47
+  - first:
+      213: 8190909460939077589
+    second: Dial_48
+  - first:
+      213: -1506110502839139226
+    second: Dial_49
+  - first:
+      213: -4306910011599429204
+    second: Dial_50
+  - first:
+      213: 229365170851781215
+    second: Dial_51
+  - first:
+      213: 8745732617393714234
+    second: Dial_52
+  - first:
+      213: -533652029664303227
+    second: Dial_53
+  - first:
+      213: -5221929290998405703
+    second: Dial_54
+  - first:
+      213: -42456692564424871
+    second: Dial_55
+  - first:
+      213: -8364542170883156358
+    second: Dial_56
+  - first:
+      213: -5370723233953023230
+    second: Dial_57
+  - first:
+      213: -4944043701647237980
+    second: Dial_58
+  - first:
+      213: 6490356797452804235
+    second: Dial_59
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dial_0
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 912
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ff40b349bbfdf9d0800000000000000
+      internalID: -2738756225248243726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_1
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 929
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61e9eb6c9fb498060800000000000000
+      internalID: 6956174635603762710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_2
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 942
+        width: 19
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad61d88ded3bd3d50800000000000000
+      internalID: 6718723988803884762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_3
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 949
+        width: 14
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96293c258b66cc640800000000000000
+      internalID: 5101565419752493673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_4
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 936
+        width: 18
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49b1e5ff556b43cf0800000000000000
+      internalID: -273393196889924716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_5
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 949
+        width: 14
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a03e68d0cd15aa030800000000000000
+      internalID: 3506705265422951178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_6
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 942
+        width: 19
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e48cd1670b35f6c50800000000000000
+      internalID: 6660634391265265742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_7
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 929
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de77d0b339e5cb630800000000000000
+      internalID: 3944131360113653741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_8
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 912
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b5c4d31382754910800000000000000
+      internalID: 1820987531640227252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_9
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 834
+        width: 39
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87ce919ff390301b0800000000000000
+      internalID: -5691695333699359624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_10
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 864
+        width: 34
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0fe120f21f0dea00800000000000000
+      internalID: 787302083872288522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_11
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 874
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 665b4042fa894a8e0800000000000000
+      internalID: -1683052482738735770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_12
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 874
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f827364e58c3e810800000000000000
+      internalID: 1793497383854090485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_13
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 864
+        width: 35
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4658087be851fa0c0800000000000000
+      internalID: -4562404194794830492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_14
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 834
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3794eb9c0f2292080800000000000000
+      internalID: -9211793145237452429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_15
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 800
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d877e3a8d7244aa80800000000000000
+      internalID: -8456561093337254003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_16
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 800
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f6227167ddc135a0800000000000000
+      internalID: -6543222458656086283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_17
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 763
+        width: 43
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd9eb1923ea58350800000000000000
+      internalID: 6018408009267322308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_18
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 763
+        width: 43
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1d4a428dff320bd0800000000000000
+      internalID: -2665497671404729057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_19
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 712
+        width: 64
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98e90abfa9662cf30800000000000000
+      internalID: 4594347385703931529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_20
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 712
+        width: 64
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0f19de87b4e38b20800000000000000
+      internalID: 3135601242606739210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_21
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 680
+        width: 47
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44ae537f711db5210800000000000000
+      internalID: 1322880816425331268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_22
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 680
+        width: 47
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6240d34f14df148d0800000000000000
+      internalID: -2863729428318583770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_23
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 636
+        width: 48
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 571cdadea34301100800000000000000
+      internalID: 76618621365633397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_24
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 636
+        width: 48
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef1bcc5f8217fb230800000000000000
+      internalID: 3656765843184595454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_25
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 590
+        width: 49
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c9cf67a741c16720800000000000000
+      internalID: 2837761753716083143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_26
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 590
+        width: 49
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7528694c01ac330d0800000000000000
+      internalID: -3444187116641811881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_27
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 543
+        width: 49
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea49b3b88a1cb2fc0800000000000000
+      internalID: -3518505754225306450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_28
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 543
+        width: 49
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e445d8c01e07db60800000000000000
+      internalID: 7770695147302765792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 491
+        width: 64
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7aa1d40560310cda0800000000000000
+      internalID: -5926716191781610841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_30
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 491
+        width: 65
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0451595fb82c82ea0800000000000000
+      internalID: -5897249805665233600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_31
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 443
+        width: 49
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 426b6c9d0186b30c0800000000000000
+      internalID: -4594964573219015132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_32
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 443
+        width: 49
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c56afb50bf15ef5d0800000000000000
+      internalID: -3026891760971307428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_33
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 391
+        width: 49
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8a5b31e0a40633e0800000000000000
+      internalID: -2074465489337492849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_34
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 391
+        width: 49
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cec1349a80f96abb0800000000000000
+      internalID: -4925074282934756116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_35
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 341
+        width: 48
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80efd5818e75da400800000000000000
+      internalID: 337022201475497480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_36
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 341
+        width: 48
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b71c47b478f7fc940800000000000000
+      internalID: 5318609904011100539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_37
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 292
+        width: 47
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 385c1309e43e55bb0800000000000000
+      internalID: -4947798689030486653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_38
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 292
+        width: 47
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7d387294c6fb3620800000000000000
+      internalID: 2755066921198566779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_39
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 243
+        width: 64
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d56c088abc312d760800000000000000
+      internalID: 7481063696442115677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_40
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 243
+        width: 64
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9103eed69f763d0a0800000000000000
+      internalID: -6858023486566289383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_41
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 202
+        width: 43
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43a4ca70908f7b690800000000000000
+      internalID: -7586322329615185356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_42
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 203
+        width: 43
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 623296d21f9f33d90800000000000000
+      internalID: -7119071771698322650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_43
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 162
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13b7a31a7ee04bb60800000000000000
+      internalID: 7760844445871405873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_44
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 125
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9e1b6009dd1b7f80800000000000000
+      internalID: -8107853886298317154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_45
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 125
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f77e4ec4fcc8590800000000000000
+      internalID: -7670528136153956596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_46
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 162
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 003eebe0e3f7d8530800000000000000
+      internalID: 3858880360238473984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_47
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 93
+        width: 34
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 275f356c35eec7770800000000000000
+      internalID: 8610018631202633074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_48
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 62
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d7f8a6e1c4fba170800000000000000
+      internalID: 8190909460939077589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_49
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 62
+        width: 45
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 664c9c53a78391be0800000000000000
+      internalID: -1506110502839139226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_50
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 93
+        width: 34
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca1ea07d928ca34c0800000000000000
+      internalID: -4306910011599429204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_51
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 41
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5a977c586ede2300800000000000000
+      internalID: 229365170851781215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_52
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 23
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a34bc488a751f5970800000000000000
+      internalID: 8745732617393714234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_53
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 9
+        width: 19
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58761327e461898f0800000000000000
+      internalID: -533652029664303227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_54
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 2
+        width: 14
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b525df0afaf787b0800000000000000
+      internalID: -5221929290998405703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_55
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 0
+        width: 18
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9570c51fcd9296ff0800000000000000
+      internalID: -42456692564424871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_56
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 2
+        width: 14
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a761cbb763d2beb80800000000000000
+      internalID: -8364542170883156358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_57
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 9
+        width: 19
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20bfa4d8cab5775b0800000000000000
+      internalID: -5370723233953023230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_58
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 23
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ac1f41b27a336bb0800000000000000
+      internalID: -4944043701647237980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dial_59
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 41
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8067b1be11621a50800000000000000
+      internalID: 6490356797452804235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Dial_0: -2738756225248243726
+      Dial_1: 6956174635603762710
+      Dial_10: 787302083872288522
+      Dial_11: -1683052482738735770
+      Dial_12: 1793497383854090485
+      Dial_13: -4562404194794830492
+      Dial_14: -9211793145237452429
+      Dial_15: -8456561093337254003
+      Dial_16: -6543222458656086283
+      Dial_17: 6018408009267322308
+      Dial_18: -2665497671404729057
+      Dial_19: 4594347385703931529
+      Dial_2: 6718723988803884762
+      Dial_20: 3135601242606739210
+      Dial_21: 1322880816425331268
+      Dial_22: -2863729428318583770
+      Dial_23: 76618621365633397
+      Dial_24: 3656765843184595454
+      Dial_25: 2837761753716083143
+      Dial_26: -3444187116641811881
+      Dial_27: -3518505754225306450
+      Dial_28: 7770695147302765792
+      Dial_29: -5926716191781610841
+      Dial_3: 5101565419752493673
+      Dial_30: -5897249805665233600
+      Dial_31: -4594964573219015132
+      Dial_32: -3026891760971307428
+      Dial_33: -2074465489337492849
+      Dial_34: -4925074282934756116
+      Dial_35: 337022201475497480
+      Dial_36: 5318609904011100539
+      Dial_37: -4947798689030486653
+      Dial_38: 2755066921198566779
+      Dial_39: 7481063696442115677
+      Dial_4: -273393196889924716
+      Dial_40: -6858023486566289383
+      Dial_41: -7586322329615185356
+      Dial_42: -7119071771698322650
+      Dial_43: 7760844445871405873
+      Dial_44: -8107853886298317154
+      Dial_45: -7670528136153956596
+      Dial_46: 3858880360238473984
+      Dial_47: 8610018631202633074
+      Dial_48: 8190909460939077589
+      Dial_49: -1506110502839139226
+      Dial_5: 3506705265422951178
+      Dial_50: -4306910011599429204
+      Dial_51: 229365170851781215
+      Dial_52: 8745732617393714234
+      Dial_53: -533652029664303227
+      Dial_54: -5221929290998405703
+      Dial_55: -42456692564424871
+      Dial_56: -8364542170883156358
+      Dial_57: -5370723233953023230
+      Dial_58: -4944043701647237980
+      Dial_59: 6490356797452804235
+      Dial_6: 6660634391265265742
+      Dial_7: 3944131360113653741
+      Dial_8: 1820987531640227252
+      Dial_9: -5691695333699359624
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
